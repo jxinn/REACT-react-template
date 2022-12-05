@@ -1,9 +1,12 @@
 import { Outlet } from "react-router-dom";
+import { Layout } from "./Components/Structure";
 
 function Root() {
   return (
     <>
-      <Outlet />
+      <Layout>
+        <Outlet />
+      </Layout>
     </>
   );
 }

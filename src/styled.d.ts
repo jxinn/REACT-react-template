@@ -2,9 +2,9 @@ import "styled-components";
 
 declare module "styled-components" {
   export interface DefaultTheme {
-    textColor: string;
     bgColor: string;
+    textColor: string;
+    primaryColor: string;
     accentColor: string;
-    lineColor: string;
   }
 }
