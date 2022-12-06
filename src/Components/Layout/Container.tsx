@@ -1,24 +1,24 @@
 import styled from "styled-components";
-import { theme } from "../../theme";
+import { theme } from "~/theme";
 import Footer from "./Footer";
 import Header from "./Header";
 
 interface ILayoutProps {
   children: React.ReactElement;
 }
-export default function Layout({ children }: ILayoutProps) {
+export default function Container({ children }: ILayoutProps) {
   return (
     <>
       <Header />
-      <Container>
+      <Wrap>
         <Content>{children}</Content>
-      </Container>
+      </Wrap>
       <Footer />
     </>
   );
 }
 
-const Container = styled.div`
+const Wrap = styled.div`
   display: flex;
   min-height: calc(100vh - 55px);
   background-color: ${theme.bgColor};
