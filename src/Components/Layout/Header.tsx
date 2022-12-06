@@ -1,19 +1,22 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { theme } from "~/theme";
 
 export default function Header() {
   return (
     <Nav>
-      <Logo>LOGO</Logo>
-      <MenuBox>
-        <Menu>Home</Menu>
-        <Menu>About us</Menu>
-        <Menu>Services</Menu>
-        <Menu>Blog</Menu>
-      </MenuBox>
-      <MenuBox>
-        <Menu active={true}>Login</Menu>
-      </MenuBox>
+      <NavBox>
+        <Logo>LOGO</Logo>
+        <MenuBox>
+          <Menu to="/">Home</Menu>
+          <Menu to="/about">About us</Menu>
+          <Menu to="/service">Services</Menu>
+          <Menu to="/blog">Blog</Menu>
+          <Menu to="/" active={true}>
+            Login
+          </Menu>
+        </MenuBox>
+      </NavBox>
     </Nav>
   );
 }
@@ -25,11 +28,17 @@ interface IMenuProps {
 const Nav = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 28px;
   height: 135px;
   border-bottom: 1px solid ${theme.primaryColor};
   background-color: #ffffff;
+`;
+const NavBox = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
 `;
 const Logo = styled.h1`
   font-size: 32px;
@@ -41,12 +50,16 @@ const MenuBox = styled.div`
   align-items: center;
   gap: 60px;
 `;
-const Menu = styled.div<IMenuProps>`
+const Menu = styled(Link)<IMenuProps>`
   font-size: 16px;
   font-weight: 500;
   opacity: 50%;
+  padding-bottom: 1px;
   color: ${theme.primaryColor};
   ${(props) =>
     props.active &&
-    `border-bottom: solid 2px ${theme.accentColor}; opacity: 1;`}
+    `box-shadow: inset 0 -2px 0 0 ${theme.accentColor}; opacity: 1;`}
+  &:last-child {
+    margin-left: 40px;
+  }
 `;
