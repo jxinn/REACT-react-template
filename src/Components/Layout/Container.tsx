@@ -20,7 +20,7 @@ export default function Container({ children }: ILayoutProps) {
 
 const Wrap = styled.div`
   display: flex;
-  min-height: calc(100vh - 55px);
+  min-height: calc(100vh - 235px);
   background-color: ${theme.bgColor};
 `;
 const Content = styled.div`
