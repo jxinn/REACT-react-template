@@ -10,5 +10,5 @@ export default function Home() {
 
 const Container = styled.div`
   height: 100%;
-  background-color: ${(props) => props.theme.primaryColor};
+  background-color: ${(props) => props.theme.bgColor};
 `;

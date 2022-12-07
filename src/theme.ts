@@ -5,11 +5,13 @@ export const theme: DefaultTheme = {
   textColor: "#000000",
   primaryColor: "#385D50",
   accentColor: "#F9BF29",
+  borderColor: "#385D50",
 };
 
 export const mainTheme: DefaultTheme = {
   bgColor: "#385D50",
   textColor: "#FFFFFF",
-  primaryColor: "#385D50",
+  primaryColor: "#FFFFFF",
   accentColor: "#F9BF29",
+  borderColor: "#385D50",
 };

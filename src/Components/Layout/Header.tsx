@@ -11,7 +11,7 @@ export default function Header() {
           <Menu to="/about">About us</Menu>
           <Menu to="/service">Services</Menu>
           <Menu to="/blog">Blog</Menu>
-          <Menu to="/" active={true}>
+          <Menu to="/login" active={true}>
             Login
           </Menu>
         </MenuBox>
@@ -28,7 +28,7 @@ const Nav = styled.div`
   display: flex;
   align-items: center;
   height: 135px;
-  border-bottom: 1px solid ${(props) => props.theme.primaryColor};
+  border-bottom: 1px solid ${(props) => props.theme.borderColor};
   background-color: ${(props) => props.theme.bgColor};
 `;
 const NavBox = styled.div`

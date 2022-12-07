@@ -1,16 +1,16 @@
-import { RouterProvider, useLocation } from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { mainTheme, theme } from "~/theme";
 import router from "~/Router";
+import { useAppSelector } from "~/store";
 
 export function App() {
+  const themeType = useAppSelector((state) => state.theme);
   return (
-    <>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <RouterProvider router={router} />
-      </ThemeProvider>
-    </>
+    <ThemeProvider theme={themeType.theme === "main" ? mainTheme : theme}>
+      <GlobalStyle />
+      <RouterProvider router={router} />
+    </ThemeProvider>
   );
 }
 

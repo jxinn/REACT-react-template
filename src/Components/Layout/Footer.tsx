@@ -13,4 +13,5 @@ const Foot = styled.div`
   font-weight: 400;
   border-top: 1px solid ${(props) => props.theme.primaryColor};
   color: #6a6a6a;
+  background-color: #ffffff;
 `;
