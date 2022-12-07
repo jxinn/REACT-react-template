@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { theme } from "~/theme";
 
 export default function Header() {
   return (
@@ -29,8 +28,8 @@ const Nav = styled.div`
   display: flex;
   align-items: center;
   height: 135px;
-  border-bottom: 1px solid ${theme.primaryColor};
-  background-color: #ffffff;
+  border-bottom: 1px solid ${(props) => props.theme.primaryColor};
+  background-color: ${(props) => props.theme.bgColor};
 `;
 const NavBox = styled.div`
   display: flex;
@@ -43,7 +42,7 @@ const NavBox = styled.div`
 const Logo = styled.h1`
   font-size: 32px;
   font-weight: 500;
-  color: ${theme.primaryColor};
+  color: ${(props) => props.theme.primaryColor};
 `;
 const MenuBox = styled.div`
   display: flex;
@@ -55,10 +54,10 @@ const Menu = styled(Link)<IMenuProps>`
   font-weight: 500;
   opacity: 50%;
   padding-bottom: 1px;
-  color: ${theme.primaryColor};
+  color: ${(props) => props.theme.primaryColor};
   ${(props) =>
     props.active &&
-    `box-shadow: inset 0 -2px 0 0 ${theme.accentColor}; opacity: 1;`}
+    `box-shadow: inset 0 -2px 0 0 ${props.theme.accentColor}; opacity: 1;`}
   &:last-child {
     margin-left: 40px;
   }

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { theme } from "~/theme";
 import Footer from "./Footer";
 import Header from "./Header";
 
@@ -21,7 +20,7 @@ export default function Container({ children }: ILayoutProps) {
 const Wrap = styled.div`
   display: flex;
   min-height: calc(100vh - 235px);
-  background-color: ${theme.bgColor};
+  background-color: ${(props) => props.theme.bgColor};
 `;
 const Content = styled.div`
   flex: 1;

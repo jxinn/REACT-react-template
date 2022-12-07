@@ -6,3 +6,10 @@ export const theme: DefaultTheme = {
   primaryColor: "#385D50",
   accentColor: "#F9BF29",
 };
+
+export const mainTheme: DefaultTheme = {
+  bgColor: "#385D50",
+  textColor: "#FFFFFF",
+  primaryColor: "#385D50",
+  accentColor: "#F9BF29",
+};
