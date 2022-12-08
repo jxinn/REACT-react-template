@@ -7,11 +7,3 @@ export const theme: DefaultTheme = {
   accentColor: "#F9BF29",
   borderColor: "#385D50",
 };
-
-export const mainTheme: DefaultTheme = {
-  bgColor: "#385D50",
-  textColor: "#FFFFFF",
-  primaryColor: "#FFFFFF",
-  accentColor: "#F9BF29",
-  borderColor: "#385D50",
-};
