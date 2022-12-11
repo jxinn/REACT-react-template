@@ -75,4 +75,5 @@ a {
   text-decoration:none;
   color:inherit;
 }
+textarea:focus, select:focus, input:focus{ outline: none; text-decoration:none;}
 `;
