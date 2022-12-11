@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { VerticalWrap } from "@Components/Layout";
 import { VerticalForm } from "@Components/Form";
 import InputWrap from "@Components/Input";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   return (
@@ -20,9 +21,9 @@ export default function Login() {
           </LoginInput>
         </LoginFormBox>
         <LoginBtnBox>
-          <LoginBtn>Login</LoginBtn>
-          <LoginBtn bgColor="#EFF2F1" color="2F2F2F">
-            Sign up
+          <LoginBtn as="button">Login</LoginBtn>
+          <LoginBtn to="/signup" bgColor="#EFF2F1" color="#2F2F2F">
+            SignUp
           </LoginBtn>
         </LoginBtnBox>
       </VerticalForm>
@@ -51,9 +52,15 @@ const LoginBtnBox = styled.div`
   display: flex;
   height: 50px;
 `;
-const LoginBtn = styled.button<{ bgColor?: string; color?: string }>`
+const LoginBtn = styled(Link)<{ bgColor?: string; color?: string }>`
   flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
   border: none;
+  font-size: 14px;
+  font-weight: 400;
   background-color: ${(props) => props.bgColor || "#2F2F2F"};
   color: ${(props) => props.color || "#FFFFFF"};
 `;
