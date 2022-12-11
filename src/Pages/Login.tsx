@@ -1,47 +1,59 @@
 import styled from "styled-components";
-import aside from "@Assets/aside.png";
+import { VerticalWrap } from "@Components/Layout";
+import { VerticalForm } from "@Components/Form";
+import InputWrap from "@Components/Input";
 
 export default function Login() {
   return (
     <>
-      <VerticalWrap>
-        <LeftSection></LeftSection>
-        <MainSection></MainSection>
-      </VerticalWrap>
-      <LoginWrap>
-        <LoginAside></LoginAside>
-        <LoginSection></LoginSection>
-      </LoginWrap>
+      <VerticalWrap />
+      <VerticalForm>
+        <LoginFormBox>
+          <LoginTitle>Login</LoginTitle>
+          <LoginInput>
+            <InputWrap>
+              <input className="inp" placeholder="Email" />
+            </InputWrap>
+            <InputWrap>
+              <input className="inp" placeholder="Password" />
+            </InputWrap>
+          </LoginInput>
+        </LoginFormBox>
+        <LoginBtnBox>
+          <LoginBtn>Login</LoginBtn>
+          <LoginBtn bgColor="#EFF2F1" color="2F2F2F">
+            Sign up
+          </LoginBtn>
+        </LoginBtnBox>
+      </VerticalForm>
     </>
   );
 }
 
-const VerticalWrap = styled.div`
+const LoginFormBox = styled.div`
   flex: 1;
   display: flex;
+  flex-direction: column;
+  padding: 40px 50px;
 `;
-const LeftSection = styled.div`
-  flex: 1;
+const LoginTitle = styled.h1`
+  margin-bottom: 45px;
+  font-weight: 600;
+  font-size: 54px;
+  line-height: 65px;
 `;
-const MainSection = styled.div`
-  flex: 3;
-  background-color: ${(props) => props.theme.primaryColor};
-`;
-const LoginWrap = styled.div`
+const LoginInput = styled.div`
   display: flex;
-  position: absolute;
-  width: 845px;
-  height: 550px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  background-color: aquamarine;
+  flex-direction: column;
+  gap: 20px;
 `;
-const LoginAside = styled.div`
-  flex: 1;
-  background-image: url(${aside});
+const LoginBtnBox = styled.div`
+  display: flex;
+  height: 50px;
 `;
-const LoginSection = styled.div`
+const LoginBtn = styled.button<{ bgColor?: string; color?: string }>`
   flex: 1;
+  border: none;
+  background-color: ${(props) => props.bgColor || "#2F2F2F"};
+  color: ${(props) => props.color || "#FFFFFF"};
 `;
