@@ -56,13 +56,17 @@ const MenuBox = styled.div<{ color?: string }>`
   display: flex;
   align-items: center;
   gap: 60px;
-  color: ${(props) => props.color || props.theme.primaryColor};
+
+  & a {
+    color: ${(props) => props.color || props.theme.primaryColor};
+  }
 `;
 const Menu = styled(NavLink)`
   font-size: 16px;
   font-weight: 500;
   opacity: 50%;
   padding-bottom: 1px;
+
   &:last-child {
     margin-left: 40px;
   }
