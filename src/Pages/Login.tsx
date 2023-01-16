@@ -4,11 +4,14 @@ import { FormError, VerticalForm } from "@Components/Form";
 import InputWrap from "@Components/Input";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { useMutation } from "@tanstack/react-query";
+import axios from "axios";
 
 interface ILoginForm {
   email: string;
   password: string;
 }
+interface ILoginParams extends ILoginForm {}
 export default function Login() {
   const {
     register,
@@ -21,10 +24,15 @@ export default function Login() {
 
   const onCompleted = () => {
     const { email, password } = getValues();
-    // TODO: EXECUTE REACT QUERY.
-    console.log(getValues());
+    mutate(getValues());
     alert(isValid);
   };
+
+  const { mutate, isLoading, isError, error, isSuccess } = useMutation(
+    (data: ILoginParams) => {
+      return axios.post<ILoginParams>("/todos", data);
+    }
+  );
 
   return (
     <>

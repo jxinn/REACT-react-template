@@ -3,7 +3,7 @@ import Root from "~/Root";
 import Login from "@Pages/Login";
 import Home from "@Pages/Home";
 import NotFound from "@Pages/NotFound";
-import SignUp from "~/Pages/SignUp";
+import SignUp from "@Pages/SignUp";
 
 const router = createBrowserRouter([
   {
